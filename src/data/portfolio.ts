@@ -19,9 +19,9 @@ export type Project = {
 export const profile = {
   name: 'Théo',
   title: 'Ingénieur informatique',
-  github: '',
-  linkedin: '',
-  email: '',
+  github: 'https://github.com/tberny16',
+  linkedin: 'https://www.linkedin.com/in/theoberny',
+  email: 'theo.berny@outlook.com',
   cv: '',
 } as const
 
@@ -36,21 +36,29 @@ export const navigation = [
 ] as const
 
 export const experiences: Experience[] = [
+    {
+    company: 'Infomil',
+    role: 'Ingénieurs Système & Réseau',
+    period: 'Septembre 2026',
+    location: 'Toulouse',
+    description: '',
+    technologies: [Openshift, Harbord, Switch, Réseau, Système, Linux, Windows],
+  },
   {
     company: 'Infomil',
-    role: '',
-    period: '',
-    location: '',
-    description: '',
-    technologies: [],
+    role: 'Alternant Ingénieurs Système & Réseau',
+    period: 'Septembre 2024 - Septembre 2026',
+    location: 'Toulouse',
+    description: "Travail autour d'Openshift, j'ai déployé plusieurs clusters, une application et des pods. J'ai également piloté un POC de qualification d'une nouvelle architecture réseau pour nos plateformes hyperconvergées (HCI)",
+    technologies: [Openshift, Harbord, Switch, Réseau, Système, Linux, Windows],
   },
   {
     company: 'Région Limoges',
     role: '',
     period: '',
-    location: '',
-    description: '',
-    technologies: [],
+    location: 'Limoges',
+    description: "Travail autour de Docker et Kubernetes (maquettage Tanzu, Rancher et Portainer) et maquettage d'interface de pilotage d'Ansible (Rundeck et Sémaphore)",
+    technologies: [Docker, Portainer, Rundeck, Sémaphore, Rancher],
   },
 ]
 
@@ -76,7 +84,7 @@ export const focusAreas = [
 
 export const education = {
   title: "Formation d'ingénieur informatique",
-  school: '',
-  period: '',
-  description: '',
+  school: '3IL Ingénieur Limoges',
+  period: '2021-2026',
+  description: 'Aveec option robotique, IA, IoT',
 } as const
