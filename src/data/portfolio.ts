@@ -35,7 +35,6 @@ export const navigation = [
   { label: 'Contact', href: '#contact' },
 ] as const
 
-// Complétez uniquement les champs dont vous connaissez les informations exactes.
 export const experiences: Experience[] = [
   {
     company: 'Infomil',
@@ -55,10 +54,8 @@ export const experiences: Experience[] = [
   },
 ]
 
-// Ajoutez ici les projets que vous souhaitez présenter.
 export const projects: Project[] = []
 
-// Ces axes reprennent uniquement les centres d'intérêt fournis dans le brief.
 export const focusAreas = [
   {
     index: '01',
