@@ -238,14 +238,14 @@ function App() {
           </div>
           <div className="experience-list">
             {experiences.map((experience, index) => (
-              <article className="experience-row" key={experience.company}>
+              <article className="experience-row" key={`${experience.company}-${experience.role}`}>
                 <div className="experience-number">0{index + 1}</div>
                 <div>
                   <h3>{experience.company}</h3>
                   <p className="experience-role">{experience.role || 'Intitulé du poste à préciser'}</p>
                 </div>
                 <div className="experience-detail">
-                  <p>{experience.description || "Détails de l'expérience à venir."}</p>
+                  {experience.description && <p>{experience.description}</p>}
                   {experience.technologies.length > 0 && (
                     <ul className="tag-list">
                       {experience.technologies.map((technology) => <li key={technology}>{technology}</li>)}
@@ -253,7 +253,7 @@ function App() {
                   )}
                 </div>
                 <div className="experience-meta">
-                  <span>{experience.period || 'Période à préciser'}</span>
+                  {experience.period && <span>{experience.period}</span>}
                   {experience.location && <span>{experience.location}</span>}
                 </div>
               </article>
@@ -319,15 +319,21 @@ function App() {
             <p className="kicker">Formation</p>
             <h2>Apprendre avec<br />exigence.</h2>
           </div>
-          <article className="education-card">
+          <div className="education-card">
             <p className="education-label">Parcours</p>
-            <h3>{education.title}</h3>
-            <div className="education-meta">
-              <span>{education.school || 'Établissement à préciser'}</span>
-              <span>{education.period || 'Période à préciser'}</span>
+            <div className="education-list">
+              {education.map((course) => (
+                <article className="education-entry" key={`${course.title}-${course.school}`}>
+                  <h3>{course.title}</h3>
+                  <div className="education-meta">
+                    <span>{course.school}</span>
+                    <span>{course.period}</span>
+                  </div>
+                  {course.description && <p className="education-description">{course.description}</p>}
+                </article>
+              ))}
             </div>
-            {education.description && <p>{education.description}</p>}
-          </article>
+          </div>
         </section>
 
         <section className="contact-section reveal" id="contact">
